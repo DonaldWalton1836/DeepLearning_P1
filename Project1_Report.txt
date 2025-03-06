@@ -1,0 +1,34 @@
+Task 1 Report
+This report for task 1 explores the effectiveness of three different neural network architectures on a handwritten digit classification task. The three architectures are:
+
+1.	Fully Connected Network: This treats the input as a flat vector with no spatial relationships.
+2.	Locally Connected Network (No Weight Sharing): This has similar features compared to the CNN but without any shared filters. This allows different filters at different positions to learn localized features.
+3.	Convolutional Neural Network (CNN): This feature uses convolutional layers to share weights, which makes it more computationally efficient.
+The goal of this task is to compare the networks’ ability to recognize certain patterns, using accuracy as the evaluation rubric.
+
+The Expected Outcomes Before Training:
+Fully Connected Network:
+1.	Since The Fully Connected Network lacks spatial awareness, they treat all the pixels equally to each other, making it inefficient for image-based tasks.
+Locally Connected Network:
+1.	Since the features of this model does not share weights, it should learn localized features better than the Fully Connected Network, but it may struggle with generalization.
+CNN:
+The CNNs excel in pattern recognition due to shared filters across spatial locations.
+
+Based on prior research and class, the CNN model should outperform The Fully Connected Network, while the locally connected networks might behave similarly to CNNs but require more parameters.
+
+Observed Results after Training:
+
+After a few tests I can say that:
+1.	The Fully Connected Network average loss is around 0.0467 with 5 Epoch and an average accuracy of 92.92 percent.
+2.	The Locally Connected average loss is around 0.0378 with 5 Epoch and an average accuracy of 94.72 percent. 
+3.	The CNN average loss is around 0.0364 and an average accuracy of 94.52 percent.
+
+Key Insights and Analysis:
+
+1.	Although the Fully Connected Network lack spatial feature extractions, the dataset might contain some easy to learn patters that allow the Fully Connected to classify digits efficiently. The Regulation effects from nonlinear activations helped the model learn meaningful features and tricks.
+2.	No weight sharing means that each part of the image has unique filters, which allows the network to learn more specific location patterns. The dataset contains a fixed position of digits and there are no CNNs to recognize patterns involuntarily across other locations.
+3.	The CNNs excel in recognizing patterns regardless of the position.
+Conclusion:
+1.	The Fully Connected Network performed well, indicating that it can possibly be efficient when data has easy and structed patterns.
+2.	The Locally Connected performed nearly the best, likely due to the datasets fixed positions, which benefits from localized learning.
+3.	CNN was the second best, be slightly outperformed by the Locally Connected model.
