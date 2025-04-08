@@ -99,9 +99,11 @@ if __name__ == "__main__":
         print(f"Initialized {model_name} with default weights.")
     
     print("Testing Learning Rates...")
-    for lr in [0.0001, 0.001, 0.01]:
-        print(f"Training with Learning Rate: {lr}")
-        train_model(models["CNNModel"], train_loader, learning_rate=lr, epochs=3)
+    for model_name in ["MLPModel", "LocallyConnectedModel", "CNNModel"]:
+        print(f"\nTesting Learning Rates for {model_name}...")
+        for lr in [0.0001, 0.001, 0.01]:
+            print(f"Training {model_name} with Learning Rate: {lr}")
+            train_model(models[model_name], train_loader, learning_rate=lr, epochs=3)
     
     print("Testing Batch Sizes...")
     test_batch_sizes(models, train_dataset, batch_sizes=[16, 32, 64])
